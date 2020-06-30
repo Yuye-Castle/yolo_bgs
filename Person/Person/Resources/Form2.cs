@@ -26,5 +26,10 @@ namespace Person.Resources
         {
 
         }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,9 +35,9 @@
             // 
             // btn_setting
             // 
-            this.btn_setting.Location = new System.Drawing.Point(10, 5);
+            this.btn_setting.Location = new System.Drawing.Point(13, 5);
             this.btn_setting.Name = "btn_setting";
-            this.btn_setting.Size = new System.Drawing.Size(76, 23);
+            this.btn_setting.Size = new System.Drawing.Size(73, 23);
             this.btn_setting.TabIndex = 0;
             this.btn_setting.Text = "Setting";
             this.btn_setting.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(11, 35);
+            this.btn_exit.Location = new System.Drawing.Point(13, 35);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_exit.Size = new System.Drawing.Size(73, 23);
             this.btn_exit.TabIndex = 1;
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
@@ -61,6 +61,7 @@
             this.btn_cancel.TabIndex = 2;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // Form2
             // 
