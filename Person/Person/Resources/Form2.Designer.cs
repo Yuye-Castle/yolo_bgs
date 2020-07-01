@@ -41,7 +41,7 @@
             this.btn_setting.TabIndex = 0;
             this.btn_setting.Text = "Setting";
             this.btn_setting.UseVisualStyleBackColor = true;
-            this.btn_setting.Click += new System.EventHandler(this.button1_Click);
+            this.btn_setting.Click += new System.EventHandler(this.OnClickedSetting);
             // 
             // btn_exit
             // 
@@ -51,7 +51,7 @@
             this.btn_exit.TabIndex = 1;
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
-            this.btn_exit.Click += new System.EventHandler(this.button2_Click);
+            this.btn_exit.Click += new System.EventHandler(this.OnClickedExit);
             // 
             // btn_cancel
             // 
@@ -61,7 +61,7 @@
             this.btn_cancel.TabIndex = 2;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            this.btn_cancel.Click += new System.EventHandler(this.OnClickedCancel);
             // 
             // Form2
             // 

@@ -12,9 +12,14 @@ using Emgu.CV.Structure;
 using Emgu.CV.UI;
 using Emgu.Util;
 using Emgu.CV.XImgproc;
+using Person.Resources;
 
 namespace Person
 {
+    public enum Cnt_res{
+        e_Setting, 
+        e_Exit
+    }
     public partial class Form1 : Form
     {
         public Form1()
@@ -43,24 +48,35 @@ namespace Person
         {
             Point position = e.Location;
 
-            String ss = ""; 
-            switch (e.Button)
-            {
-                case MouseButtons.Left:
-                    ss = "Left click"; 
-                    break;
-                case MouseButtons.Right:
-                    ss = "Right click";
-                    break;
-                default:
-                    break; 
-            }
+            String ss = "";
+            if (e.Button != MouseButtons.Right)
+                return; 
             Control ctrl = (Control)sender;
             position = ctrl.PointToScreen(position); 
+
             String sz = String.Format("{0}: x = {1}: y = {2}\n", ss, position.X, position.Y); 
-            Console.WriteLine(sz); 
+            Console.WriteLine(sz);
+
+            // create control window
+            Form2 cnt_panel = new Form2(this);
+            cnt_panel.Show();
+            cnt_panel.Location = position; 
         }
-       
+        
+        public void GetControlRes(Cnt_res res)
+        {
+            Console.WriteLine("Recieve feedback\n"); 
+            if(res == Cnt_res.e_Setting) // open setting window
+            {
+
+            }
+            else if(res == Cnt_res.e_Exit) // exit window
+            {
+
+            }
+        }
+        
+
         private void Handler_resize(Object sender, EventArgs e)
         {
             // Control ctrl = (Control)sender;

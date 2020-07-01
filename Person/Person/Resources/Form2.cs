@@ -7,29 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Person.Resources; 
 namespace Person.Resources
 {
     public partial class Form2 : Form
     {
+
+        private static Form1 m_mainForm = null; 
         public Form2()
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public Form2(Form1 parentForm)
         {
-
+            InitializeComponent();
+            m_mainForm = parentForm; 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void OnClickedSetting(object sender, EventArgs e)
         {
-
+            m_mainForm.GetControlRes(Cnt_res.e_Setting);
+            this.Close(); 
         }
 
-        private void btn_cancel_Click(object sender, EventArgs e)
+        private void OnClickedExit(object sender, EventArgs e)
         {
+            m_mainForm.GetControlRes(Cnt_res.e_Exit);
+            this.Close();
+        }
 
+        private void OnClickedCancel(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
