@@ -50,11 +50,11 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.gbCam = new System.Windows.Forms.GroupBox();
-            this.radio_left = new System.Windows.Forms.RadioButton();
             this.radio_right = new System.Windows.Forms.RadioButton();
+            this.radio_left = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radio_circle = new System.Windows.Forms.RadioButton();
             this.radio_poly = new System.Windows.Forms.RadioButton();
+            this.radio_circle = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.slide_r1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slide_x1)).BeginInit();
@@ -75,7 +75,6 @@
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Rad1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -103,7 +102,6 @@
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Rad2";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -129,7 +127,6 @@
             this.text_r1.Name = "text_r1";
             this.text_r1.Size = new System.Drawing.Size(60, 20);
             this.text_r1.TabIndex = 6;
-            this.text_r1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // text_x1
             // 
@@ -151,7 +148,6 @@
             this.text_r2.Name = "text_r2";
             this.text_r2.Size = new System.Drawing.Size(60, 20);
             this.text_r2.TabIndex = 9;
-            this.text_r2.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // text_x2
             // 
@@ -174,7 +170,7 @@
             this.slide_r1.Size = new System.Drawing.Size(129, 45);
             this.slide_r1.TabIndex = 12;
             this.slide_r1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.slide_r1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.slide_r1.Scroll += new System.EventHandler(this.slideR1_Scroll);
             // 
             // slide_x1
             // 
@@ -183,6 +179,7 @@
             this.slide_x1.Size = new System.Drawing.Size(129, 45);
             this.slide_x1.TabIndex = 13;
             this.slide_x1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.slide_x1.Scroll += new System.EventHandler(this.slide_x1_Scroll);
             // 
             // slide_y1
             // 
@@ -191,6 +188,7 @@
             this.slide_y1.Size = new System.Drawing.Size(129, 45);
             this.slide_y1.TabIndex = 14;
             this.slide_y1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.slide_y1.Scroll += new System.EventHandler(this.slide_y1_Scroll);
             // 
             // slide_r2
             // 
@@ -199,7 +197,7 @@
             this.slide_r2.Size = new System.Drawing.Size(129, 45);
             this.slide_r2.TabIndex = 15;
             this.slide_r2.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.slide_r2.Scroll += new System.EventHandler(this.trackBar4_Scroll);
+            this.slide_r2.Scroll += new System.EventHandler(this.slidebar_r2);
             // 
             // slide_x2
             // 
@@ -208,6 +206,7 @@
             this.slide_x2.Size = new System.Drawing.Size(129, 45);
             this.slide_x2.TabIndex = 16;
             this.slide_x2.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.slide_x2.Scroll += new System.EventHandler(this.slide_x2_Scroll);
             // 
             // slide_y2
             // 
@@ -216,6 +215,7 @@
             this.slide_y2.Size = new System.Drawing.Size(129, 45);
             this.slide_y2.TabIndex = 17;
             this.slide_y2.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.slide_y2.Scroll += new System.EventHandler(this.slide_y2_Scroll);
             // 
             // btn_save
             // 
@@ -256,17 +256,6 @@
             this.gbCam.TabStop = false;
             this.gbCam.Text = "CAMERA";
             // 
-            // radio_left
-            // 
-            this.radio_left.AutoSize = true;
-            this.radio_left.Location = new System.Drawing.Point(7, 20);
-            this.radio_left.Name = "radio_left";
-            this.radio_left.Size = new System.Drawing.Size(51, 17);
-            this.radio_left.TabIndex = 0;
-            this.radio_left.TabStop = true;
-            this.radio_left.Text = "LEFT";
-            this.radio_left.UseVisualStyleBackColor = true;
-            // 
             // radio_right
             // 
             this.radio_right.AutoSize = true;
@@ -277,6 +266,17 @@
             this.radio_right.TabStop = true;
             this.radio_right.Text = "RIGHT";
             this.radio_right.UseVisualStyleBackColor = true;
+            // 
+            // radio_left
+            // 
+            this.radio_left.AutoSize = true;
+            this.radio_left.Location = new System.Drawing.Point(7, 20);
+            this.radio_left.Name = "radio_left";
+            this.radio_left.Size = new System.Drawing.Size(51, 17);
+            this.radio_left.TabIndex = 0;
+            this.radio_left.TabStop = true;
+            this.radio_left.Text = "LEFT";
+            this.radio_left.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -290,17 +290,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BORDER";
             // 
-            // radio_circle
-            // 
-            this.radio_circle.AutoSize = true;
-            this.radio_circle.Location = new System.Drawing.Point(6, 19);
-            this.radio_circle.Name = "radio_circle";
-            this.radio_circle.Size = new System.Drawing.Size(63, 17);
-            this.radio_circle.TabIndex = 0;
-            this.radio_circle.TabStop = true;
-            this.radio_circle.Text = "CIRCLE";
-            this.radio_circle.UseVisualStyleBackColor = true;
-            // 
             // radio_poly
             // 
             this.radio_poly.AutoSize = true;
@@ -312,6 +301,17 @@
             this.radio_poly.TabStop = true;
             this.radio_poly.Text = "POLYGON";
             this.radio_poly.UseVisualStyleBackColor = false;
+            // 
+            // radio_circle
+            // 
+            this.radio_circle.AutoSize = true;
+            this.radio_circle.Location = new System.Drawing.Point(6, 19);
+            this.radio_circle.Name = "radio_circle";
+            this.radio_circle.Size = new System.Drawing.Size(63, 17);
+            this.radio_circle.TabIndex = 0;
+            this.radio_circle.TabStop = true;
+            this.radio_circle.Text = "CIRCLE";
+            this.radio_circle.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 

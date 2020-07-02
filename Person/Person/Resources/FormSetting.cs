@@ -12,14 +12,17 @@ namespace Person.Resources
 {
     public partial class FormSetting : Form
     {
+        private static Form1 m_mainForm = null; 
+
         public FormSetting()
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        
+        public FormSetting(Form1 parent)
         {
-
+            m_mainForm = parent;
+            InitializeComponent();
         }
 
         private void FormSetting_Load(object sender, EventArgs e)
@@ -27,27 +30,29 @@ namespace Person.Resources
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void slideR1_Scroll(object sender, EventArgs e)
+        {
+
+        }
+        private void slide_x1_Scroll(object sender, EventArgs e)
         {
 
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
+        private void slide_y1_Scroll(object sender, EventArgs e)
+        {
+
+        }
+        private void slidebar_r2(object sender, EventArgs e)
+        {
+
+        }
+        private void slide_x2_Scroll(object sender, EventArgs e)
         {
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void trackBar4_Scroll(object sender, EventArgs e)
+        private void slide_y2_Scroll(object sender, EventArgs e)
         {
 
         }
